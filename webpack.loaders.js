@@ -1,14 +1,27 @@
 module.exports = [
 	{
 		test: /\.jsx?$/,
-		exclude: /(node_modules|bower_components|public\/)/,
-		loader: "babel-loader"
+		// exclude: /(node_modules|bower_components|public\/)/,
+		include: [/(src|node_modules\/rctui)/],
+		loader: "babel-loader",
+		query: {
+			// presets: ['es2015', 'react'],
+			plugins: ['transform-object-rest-spread']
+		},
 	},
+	// {
+	// 	test: /rctui*\.jsx?$/,
+	// 	loader: "babel-loader"
+	// },
 	{
 		test: /\.css$/,
 		loaders: ['style-loader', 'css-loader?importLoaders=1'],
 		exclude: ['node_modules']
 	},
+	{
+      test: /\.less$/,
+      loader: ['style-loader', 'css-loader', 'sass-loader']
+    },
 	{
 		test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
 		exclude: /(node_modules|bower_components)/,
