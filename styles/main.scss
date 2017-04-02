@@ -1,3 +1,15 @@
 body {
-	background: #ece7e7;
+    background: #ece7e7;
+	// background: rgba(236, 231, 231, .3)
+}
+
+.mask-layer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 192, 142, .3);
+    z-index: 10;
 }
